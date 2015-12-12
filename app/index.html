@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My AngularJS App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="app.css">
+</head>
+
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/lodash/lodash.js"></script>
+<script src="app.js"></script>
+<script src="controller/todoCtrl.js"></script>
+<body ng-app="appTodo">
+
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+  <div ng-controller="TodoCtrl">
+    <h2>Todo</h2>
+    <div >
+      <span>{{remaining()}} of {{todos.length}} remaining</span> | <a href="" ng-click="archive()">archive</a> </div> <br/>
+       <a ng-if="keys.length>0" href="" ng-click="undo()">UNDO</a>
+      <p>{{previousTodo}}</p>
+      <ul class="unstyled">
+        <li ng-repeat="todo in todos">
+          <input type="checkbox" ng-model="todo.done">
+          <span class="done-{{todo.done}}">{{todo.text}}</span>
+        </li>
+      </ul>
+      <form>
+        <input type="text" size="30" placeholder="Add new todo here" ng-model="inputVal.todo" >
+        <input class="btn-primary"  ng-click="addTodo(inputVal)"  type="submit" value="add">
+      </form>
+    </div>
+  </div>
+</body>
+</html>
