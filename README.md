@@ -104,7 +104,10 @@ CSS
 
 ````
 
-HTML in Browser 
-nline-style: 
+
+
 ![alt text](https://raw.githubusercontent.com/WillStreeter/AngLodashTodo/master/html-in-browser.png)
+
+
+
 
